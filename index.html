@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;500;700;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Results summary component</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="contain">
+    <section class="entete">
+      <h2> Your Result</h2>
+      <div class="score">
+        <p>76</p>
+        <span>of 100</span>
+      </div>
+      <div class="great">
+        <h3> Great</h3>
+        <p>You scored higher than 65% of the <br>people who have taken these tests.</p>
+      </div>
+    </section>
+    <main>
+      <h3>Summary</h3>
+      <section class="result-summary">
+        <div class="result" id="bg-reaction">
+          <span class="img_plus_text" id="color-react"><img src="images/icon-reaction.svg" alt="reaction-image">Reaction</span>
+          <div><span>80</span><span class="thin-weigth"> / 100</span></div>
+        </div>
+        <div class="result" id="bg-memory">
+          <span class="img_plus_text" id="color-memory"><img src="images/icon-memory.svg" alt="memory-image">Memory</span>
+          <div><span>92</span><span class="thin-weigth"> / 100</span></div>
+        </div>
+        <div class="result" id="visual">
+          <span class="img_plus_text" id="vis"><img src="images/icon-verbal.svg" alt="verbal-image">Verbal</span>
+          <div><span>61</span><span class="thin-weigth"> / 100</span></div>
+        </div>
+        <div class="result" id="cobalt-blue">
+          <span class="img_plus_text" id="blue"><img src="images/icon-visual.svg" alt="visual-image">Visual</span>
+          <div><span>72</span><span class="thin-weigth"> / 100</span></div>
+        </div>
+        <button>Continue </button>
+      </section>
+    </main>
+  </div>  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Yves-44</a>.
+  </div>
+  <script>
+    var eleve1 = {
+      nom: 'jean',
+      note: [10, 12, 14]
+    }
+
+    var eleve2= {
+      nom: 'marine',
+      note: [13, 5, 15]
+    }
+
+    function moyenne(notes){
+      let somme = 0
+      for(let i=0; i<notes.length; i++){
+        somme += notes[i]
+      }
+      moyen = somme/notes.length
+      return moyen
+    }
+
+    function estMeilleur(eleve1, eleve2){
+      moyen1 = moyenne(eleve1.note)
+      moyen2 = moyenne(eleve2.note)
+      if (moyen1 > moyen2){
+        //console.log(eleve1.nom+' est meilleur que '+eleve2.nom)
+        return true
+      }else{
+        //console.log(eleve2.nom+' est meilleur que '+eleve1.nom)
+        return false
+      }
+    }
+
+    console.log(estMeilleur(eleve1, eleve2))
+  </script>
+</body>
+</html>
